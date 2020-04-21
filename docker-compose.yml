@@ -1,0 +1,23 @@
+version: "3.2"
+services:
+  database:
+    image: 'mongo'
+    container_name: 'db_mongo'
+    volumes:
+    - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    - ./mongo-volume:/data/db
+    ports:
+      - "27017-27019:27017-27019"
+    env_file:
+      - .env
+  web:
+    build: .
+    command: python -u app.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/src
+    depends_on:
+      - database
+    env_file:
+      - .env

@@ -1,0 +1,8 @@
+flask
+pymongo
+flask-jsonpify
+flask-restful
+python-dotenv
+requests
+neovim
+ipdb
