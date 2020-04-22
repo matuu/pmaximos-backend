@@ -6,6 +6,7 @@ services:
     volumes:
     - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     - ./mongo-volume:/data/db
+    - ./dumps:/dumps
     ports:
       - "27017-27019:27017-27019"
     env_file:
