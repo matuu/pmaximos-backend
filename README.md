@@ -2,7 +2,15 @@
 Captura de productos del programa "Precios Maximos" y exposición mediante api rest
 
 Para utilizar este repositorio, deberá tener instalado docker y docker-compose.
-Una vez clonado, ingresar al repositorio y ejecutar
+Una vez clonado, ingresar al repositorio, y copiar el archivo `.env.dist` a `.env`:
+
+```bash
+cp .env.dist .env
+``` 
+
+y establacer los datos de autenticación para la db mongo.
+
+Luego, ejecutar
 
 ```bash
 docker-compose up --build
